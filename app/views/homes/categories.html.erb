@@ -1,0 +1,92 @@
+<div class="container">
+		<div class ="list-top-back">
+			<%= link_to "", root_path, class: "glyphicon glyphicon-home"%>
+			<span  class="text-capitalize"><%= @category.name %></span>
+		</div>
+		<div class="row">
+			<div class="list-element">
+				<div class="col-md-9 pull-right">
+					<div class="list-element-top">
+						<div class="row">
+							<div class="col-md-3">
+								<%= image_tag(@category.avatar_url, alt:"images")%>
+							</div>
+							<div class="col-md-9">
+								<p class="text-uppercase"><%= @category.name %></p>
+								<span><%= @category.introduce%></span>
+							</div>
+						</div>
+					</div>
+					<div class="list-element-bottom">
+						<div class="row">
+						<% @category_product.each do |product|  %>	
+							<div class="col-md-4 pull-left">
+								<div class="tabs-element">
+									<div class="content-tab-images">
+										<%= link_to image_tag(product.images_url(:thumbnail), alt: "images"), product_path(product) %>
+									</div>
+									<div class="content-tab-name">
+										<%= link_to product.name, product_path(product) %>
+									</div>
+									<p class="pride">$ <%= product.price %></p>
+									<div class="content-tab-button">
+										<%= link_to product_path(product), class: "btn btn-default btn-lg" do %>
+  											<span class="glyphicon glyphicon-shopping-cart pull-left" aria-hidden="true"></span>ADD TO CART
+										<% end %>
+										MORE
+									</div>
+								</div>
+							</div>
+						<% end %>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 pull-left">
+					<div class="list-element-left">
+						<div class="list-box">
+							<p>POPULAR</p>
+							<%	dem =0	%>
+								<% @popular.each do |product| %>
+									<% dem += 1 %>
+								<div class="list-element-left-box">
+									<div class="row">
+										<div class="col-md-5">
+											<%= link_to image_tag(product.images_url(:thumbnail), alt:"images"), product_path(product) %>
+										</div>
+										<div class="col-md-7">
+											<dl>
+												<dt><%= link_to product.name, product_path(product) %></dt>
+												<dd>$ <%= product.price %></dd>
+											</dl>
+										</div>
+									</div>
+								</div>
+								<% break if dem == 3 %>
+							<% end %>
+						</div>
+						<div class="list-box">
+							<p>BEST SELLERS</p>
+							<%	dem =0	%>
+								<% @best_sellers.each do |product|%>
+									<% dem += 1 %>
+								<div class="list-element-left-box">
+									<div class="row">
+										<div class="col-md-5">
+											<%= link_to image_tag(product.images_url(:thumbnail), alt:"images"), product_path(product) %>
+										</div>
+										<div class="col-md-7">
+											<dl>
+												<dt><%= link_to product.name, product_path(product) %></dt>
+												<dd>$ <%= product.price %></dd>
+											</dl>
+										</div>
+									</div>
+								</div>
+								<% break if dem == 3 %>
+							<% end %>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>

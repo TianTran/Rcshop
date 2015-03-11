@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: dwwaavujs
+  api_key: '765946193195294'
+  api_secret: obHeI8KEb8XEt_o6Bqy8MQbJERI
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: dwwaavujs
+  api_key: '765946193195294'
+  api_secret: obHeI8KEb8XEt_o6Bqy8MQbJERI
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: dwwaavujs
+  api_key: '765946193195294'
+  api_secret: obHeI8KEb8XEt_o6Bqy8MQbJERI
+  enhance_image_tag: true
+  static_image_support: false

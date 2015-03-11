@@ -1,0 +1,8 @@
+<%= link_to cart_path, class: "btn btn-default btn-lg pull-right" do %>
+  						<span class="glyphicon glyphicon-shopping-cart pull-left" aria-hidden="true"></span>CART
+  						<% if current_order.order_items.size == 0 %>
+  								<p>(empty)</p>
+  						<% else %>
+								<p style="color: blue"><%="#{current_order.order_items.size}"%></p>
+						<% end %>
+					<% end %>

@@ -1,0 +1,188 @@
+
+<!--show-slide-->
+<%=	render 'homes/slide'%>
+	<!--end-->
+	<!--content-top-->
+		<div class="content-top">
+			<div class="container">
+				<div class="row">	
+					<div class="col-md-4">
+						<div class="content-element">
+							<div class="row">
+								<div class="col-md-12">
+									<%=link_to image_tag("http://livedemo00.template-help.com/prestashop_52530/modules/themeconfigurator/img/4980d05246413f81b75cbba6f7a88834051520cf_banner1.jpg", alt: "images"), "#"%>
+								</div>
+								<div class="col-md-6 text-left pull-left">
+									Planes
+								</div>
+								<div class="col-md-6 text-right pull-right">
+									Show now!
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="content-element">
+							<div class="row">
+								<div class="col-md-12">
+									<%=link_to image_tag("http://livedemo00.template-help.com/prestashop_52530/modules/themeconfigurator/img/4256033dba6d342f28105a622a2e760bf8f21b49_banner2.jpg", alt: "images"), "#"%>
+								</div>
+								<div class="col-md-6 text-left pull-left">
+									Boats
+								</div>
+								<div class="col-md-6 text-right pull-right">
+									Show now!
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="content-element">
+							<div class="row">
+								<div class="col-md-12">
+									<%=link_to image_tag("http://livedemo00.template-help.com/prestashop_52530/modules/themeconfigurator/img/63fdea35e98ac88afcbfdd0eafe6c8f00cfc40aa_banner3.jpg", alt: "images"), "#"%>
+								</div>
+								<div class="col-md-6 text-left pull-left">
+									Carts
+								</div>
+								<div class="col-md-6 text-right pull-right">
+									Show now!
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	<!--end content-top-->
+	<!--content-tabs-->
+		<div class="content-tabs">
+			<div class="container">
+				<div role="tabpanel">
+					<!-- Nav tabs -->
+					<ul class="nav nav-tabs" role="tablist">
+						<li role="presentation" class="active"><a href="#popular" aria-controls="popular" role="tab" data-toggle="tab">POPULAR</a></li> 
+						<li role="presentation"><a href="#new-arrivals" aria-controls="new-arrivals" role="tab" data-toggle="tab">NEW ARRIVALS</a></li>
+						<li role="presentation"><a href="#best-sellers" aria-controls="best-sellers" role="tab" data-toggle="tab">BEST SELLERS</a></li> 
+					</ul>
+					<div class="tab-content">
+						<div role="tabpanel" class="tab-pane active" id="popular">
+							<div class="row">
+								<% @popular.each do |product| %>
+									<div class="col-xs-6 col-sm-6 col-md-3 pull-left">
+										<div class="tabs-element">
+										 <script>
+									        $(function() {
+									            $('.zoom').hoverZoom(); // Default
+									        }); 
+									    </script>
+											<div class="content-tab-images">
+												<%=link_to image_tag(product.images_url(:thumbnail), alt: "images", class: "zoom"), product_path(product)%>
+											</div>
+											<div class="content-tab-name">
+												<%=link_to product.name, product_path(product)%>
+											</div>
+											<p class="pride">$	<%=product.price%></p>
+											<div class="content-tab-button">
+												<%= link_to "#", class: "btn btn-default btn-lg" do %>
+  													<span class="glyphicon glyphicon-shopping-cart pull-left" aria-hidden="true"></span>ADD TO CART
+												<% end %>
+												MORE
+											</div>
+										</div>
+									</div>
+							 	<% end %>
+							</div>
+						</div>
+						<div role="tabpanel" class="tab-pane" id="new-arrivals">
+							<div class="row">
+								<% @new_arrivals.each do |product| %>
+									<div class="col-md-3">
+										<div class="tabs-element pull-left">
+											<div class="content-tab-images">
+												<%=link_to image_tag(product.images_url(:thumbnail), alt: "images"), product_path(product)%>
+											</div>
+											<div class="content-tab-name">
+												<%=link_to product.name, product_path(product)%>
+											</div>
+											<p class="pride">$	<%=product.price%></p>
+											<div class="content-tab-button">
+												<a class="btn btn-default btn-lg" href="#" role="button">
+													<span class="glyphicon glyphicon-shopping-cart pull-left" aria-hidden="true"></span>ADD TO CART
+												</a>
+													MORE
+											</div>
+										</div>
+									</div>
+								<% 	end %>
+							</div>
+						</div>
+						<div role="tabpanel" class="tab-pane" id="best-sellers">
+							<div class="row">
+								<% @best_sellers.each do |product| %>
+									<div class="col-md-3 pull-left">
+										<div class="tabs-element">
+											<div class="content-tab-images">
+												<%=link_to image_tag(product.images_url(:thumbnail), alt: "images"), product_path(product)%>
+											</div>
+											<div class="content-tab-name">
+												<%=link_to product.name, product_path(product)%>	
+											</div>
+											<p class="pride">$	<%=product.price%></p>
+											<div class="content-tab-button">
+												<a class="btn btn-default btn-lg" href="#" role="button">
+													<span class="glyphicon glyphicon-shopping-cart pull-left" aria-hidden="true"></span>ADD TO CART
+												</a>
+													MORE
+											</div>
+										</div>
+									</div>
+								<% end %>
+							</div>
+						</div>
+					</div>
+					<script>
+						$(function () {
+						$('#myTab a:first').tab('show')
+						})
+					</script>
+				</div>
+			</div>
+		</div>
+		<!--end content-tabs-->
+<div class="footer-top">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4">
+						FOLLOW US ON FACEBOOK
+						
+					</div>
+					<div class="col-md-4 footer-border-center">
+						<div class="row">
+							<div class="col-md-2">
+								<img src=""/>
+								<img src=""/>
+								<img src=""/>
+							</div>
+							<div class="col-md-1">
+							</div>
+							<div class="col-md-9">
+								<dl>
+									<dt>LOREM IPSUM</dt>
+									<dd>Lorem ipsum dolor sit amet conse ctetur voluptate velit esse cillum dolore eu</dd>
+									<dt>DOLOR SIT AMET</dt>
+									<dd>Lorem ipsum dolor sit amet conse ctetur voluptate velit esse cillum dolore eu</dd>
+									<dt>CTETUR VOLUPTATE</dt>
+									<dd>Lorem ipsum dolor sit amet conse ctetur voluptate velit esse cillum dolore eu</dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+					CUSTOM BLOCK
+						<p>Lorem ipsum dolor sit amet conse ctetu</p>
+						<span>Sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit.</span>
+					</div>
+				</div>
+			</div>
+		</div>

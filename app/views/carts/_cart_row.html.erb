@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="cart">
+  <%= form_for order_item, remote: true do |f| %>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>ProductID</th>
+          <th>ProductName</th>
+          <th>ProductImage</th>
+          <th>Quantity</th>
+          <th>UnitPrice</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><%= product.product_code %></td>
+          <td><%= product.name %></td>
+          <td><%= image_tag(product.images_url(:thumbnail), class: "product_cart_image") %></td>
+          <td><%= f.number_field :quantity, value: order_item.quantity.to_i, class: "form-control", min: 1 %></td>
+          <td>
+            <span style="color: green"><%= number_to_currency order_item.unit_price %></span>
+          </td>
+          <td>
+            <%= f.submit "Update Quantity", class: "btn btn-primary" %>
+            <%= link_to "Delete", order_item, { data: { confirm: "Are you sure you wish to delete the product '#{order_item.product.name}' from your cart?" }, method: :delete, remote: true, class: "btn btn-danger" } %>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <%= f.hidden_field :product_id, value: product.id %>
+    <h2 class="text-right">Total Price: <span style="color: green"><%= number_to_currency order_item.total_price %></span></h2>
+  <% end %>
+  </div>
+</div>
