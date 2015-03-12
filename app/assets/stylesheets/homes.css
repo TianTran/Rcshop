@@ -58,16 +58,12 @@
 .content-tab-images{
 	box-shadow:0px 0px 10px 7px #E8E8E8 ;
 	text-align:center;
-	width:100%;
+	width: 100%;
 	padding-bottom:20px;
 	padding-top:20px;
 }
 .content-tab-images:hover{
 	box-shadow:0px 0px 10px 7px #A0A0A0 ;
-}
-.content-tab-images img{
-	width: 100% !important;
-	text-align:center;
 }
 .content-tab-images a:hover{
 	background-color:transparent;
@@ -95,6 +91,11 @@
 	margin-top:10px !important;
 	padding-bottom:10px;
 	text-align:left !important;
+}
+.pride-old{
+	font-size: 18px !important;
+	color:#707070  !important;
+	text-decoration: line-through;
 }
 .content-tab-button{
 	color:#6c6c6c;
@@ -125,6 +126,33 @@
 }
 .tabs-element{
 	margin-bottom:40px;
+	position: relative;
+}
+.box-sale{
+  	width: 100px;
+  	height: 100px;
+ 	position: absolute;
+  	right: 0px;
+  	top: 0px;
+  	display: block;
+  	z-index: 1;
+  	overflow: hidden;
+}
+.text-sale{
+	font-size: 14px !important;
+	text-transform: uppercase;
+  	background: #ed5258;
+  	margin: 0 !important;
+  	padding: 12px 0 13px !important;
+  	text-align: center !important;
+  	width: 160px !important;
+  	color: #fff !important;
+	position: absolute;
+    right: -45px;
+    top: 11px;
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
 }
 /*menu tab*/
 .content-tabs .nav-tabs{
@@ -431,4 +459,10 @@ background-image: none;
 border: 1px solid #ccc;
 border-radius: 4px;
 box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+}
+
+
+/*sale box*/
+.product_box {
+	/*border:1px solid red ;*/
 }

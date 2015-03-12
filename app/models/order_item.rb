@@ -7,8 +7,12 @@ class OrderItem < ActiveRecord::Base
   validate :order_present
 
   before_save :finalize
-
   def unit_price
+    if product.sale == true
+      product.price = product.price_sell
+    else
+      product.price
+    end
     if persisted?
       self[:unit_price]
     else

@@ -20,7 +20,7 @@
 					<div class="list-element-bottom">
 						<div class="row">
 						<% @category_product.each do |product|  %>
-							<div class="col-md-4 pull-left">
+							<div class="col-xs-6 col-sm-6 col-md-4 pull-left">
 								<%= render "form_product", product: product, order_item: @order_item %>
 							</div>	
 						<% end %>
