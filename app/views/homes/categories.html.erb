@@ -19,24 +19,10 @@
 					</div>
 					<div class="list-element-bottom">
 						<div class="row">
-						<% @category_product.each do |product|  %>	
+						<% @category_product.each do |product|  %>
 							<div class="col-md-4 pull-left">
-								<div class="tabs-element">
-									<div class="content-tab-images">
-										<%= link_to image_tag(product.images_url(:thumbnail), alt: "images"), product_path(product) %>
-									</div>
-									<div class="content-tab-name">
-										<%= link_to product.name, product_path(product) %>
-									</div>
-									<p class="pride">$ <%= product.price %></p>
-									<div class="content-tab-button">
-										<%= link_to product_path(product), class: "btn btn-default btn-lg" do %>
-  											<span class="glyphicon glyphicon-shopping-cart pull-left" aria-hidden="true"></span>ADD TO CART
-										<% end %>
-										MORE
-									</div>
-								</div>
-							</div>
+								<%= render "form_product", product: product, order_item: @order_item %>
+							</div>	
 						<% end %>
 						</div>
 					</div>

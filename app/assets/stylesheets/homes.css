@@ -103,6 +103,7 @@
 .content-tab-button .btn-default:hover{
 	background-color:black;
 	box-shadow:none;
+	background-image: none;
 }
 .content-tab-button .btn-default {
 	background-image:none;
@@ -114,6 +115,7 @@
 	line-height:1;
 	padding-bottom:20px;
 	padding-top:20px;
+	text-shadow:none;
 }
 .btn-default a{
 	color:white !important;
@@ -333,6 +335,7 @@
 	background-color:#ed5258;
 	color:white;
 	font-size:12px;
+	text-shadow: none;
 }
 .detailed-right-box .btn-default:hover{
 	background-color:black;
@@ -346,6 +349,9 @@
 }
 .detailed-right-box .btn-default a:hover{
 	color:white;
+}
+.detailed-right-box button:hover{
+	background-image: none !important;
 }
 .detailed-right-box .col-md-12 {
 	padding-bottom:10px;
